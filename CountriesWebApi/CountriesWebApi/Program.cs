@@ -1,9 +1,10 @@
 using CountriesWebApi.Interface;
+using CountriesWebApi.Service;
 using Refit;
 
 // Add services to the container.
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddScoped<IApiService, ApiService>();
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
