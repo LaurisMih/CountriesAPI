@@ -1,6 +1,4 @@
 using CountriesWebApi.Interface;
-using CountriesWebApi.Service;
-using CountriesWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CountriesWebApi.Controllers
@@ -10,42 +8,48 @@ namespace CountriesWebApi.Controllers
     public class CountryApiController : ControllerBase
     {
         private readonly ICountryApi _countries;
-        //private readonly IValidation _validation;
-        private readonly IApiService _service;
-        public CountryApiController(ICountryApi countries, /*IValidation validation*/ IApiService service)
+        private readonly ICountryValidation _validation;
+        private readonly ICountryFilter _filter;
+       
+        public CountryApiController(ICountryApi countries, ICountryValidation validation, ICountryFilter service)
         {
-            _countries = countries;
-           // _validation = validation;
-            _service = service;
+           _countries = countries;
+           _validation = validation;
+           _filter = service;       
         }
 
         [HttpGet]
         [Route("TopTenByPopulation")]
         public async Task<IActionResult> GetTopTenCountriesByPopulation()
         {
-            var getAllEuCountries = await _countries.GetCountries();
+            var euCountries = await _countries.GetEuCountries();
           
-            return Ok(_service.SortByPopulation(getAllEuCountries).Take(10));
+            return Ok(_filter.GetSortedCountriesByPopulation(euCountries).Take(10));
         }
 
         [HttpGet]
         [Route("TopTenByPopulationDensity")]
         public async Task<IActionResult> GetTopTenCountriesByPopulationDensity()
         {
-            var getAllEuCountries = await _countries.GetCountries();
+            var euCountries = await _countries.GetEuCountries();
 
-            return Ok(_service.SortByPopulationDensity(getAllEuCountries).Take(10));
+            return Ok(_filter.GetSortedCountriesByPopulationDensity(euCountries).Take(10));
         }
 
         [HttpGet]
         [Route("{name}")]
         public async Task<IActionResult> FindInfoAboutCountryByName(string name)
         {
-            var getCountryByName = await _countries.GetCountryByName(name);
-            
-           
+           var getEuCountryByName = await _countries.GetCountryByName(name);
+           var getAllEuCountries = await _countries.GetEuCountries();
+           var isCountryValid = getEuCountryByName.FirstOrDefault(c => c.Name == name);
 
-            return Ok(_service.FindAllInfoAboutCountry(getCountryByName));
+           if (isCountryValid == null || !_validation.CountryIsValid(getAllEuCountries, isCountryValid))
+           {
+               return BadRequest($"{name} is not an EU country");
+           }
+
+           return Ok(_filter.GetAllInfoAboutCountry(getEuCountryByName));
         }
     }
 }

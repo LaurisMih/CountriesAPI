@@ -2,11 +2,11 @@ namespace CountriesWebApi.Models
 {
     public class Country
     {
-        public string name { get; set; }
-        public List<string>? topLevelDomain { get; set; }
-        public double area { get; set; }
-        public int population { get; set; }
-        public string? nativeName { get; set; }
-        public bool independent { get; init; }
+        public string Name { get; set; }
+        public List<string> TopLevelDomain { get; set; }
+        public double Area { get; set; }
+        public int Population { get; set; }
+        public string NativeName { get; set; }
+        public bool Independent { get; init; }
     }
 }

@@ -1,10 +1,13 @@
 using CountriesWebApi.Interface;
-using CountriesWebApi.Service;
+using CountriesWebApi.Filter;
+using CountriesWebApi.Validation;
 using Refit;
 
 // Add services to the container.
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IApiService, ApiService>();
+builder.Services.AddScoped<ICountryFilter, CountryFilter>();
+builder.Services.AddScoped<ICountryValidation, CountryValidation>();
+
 
 var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
