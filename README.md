@@ -23,4 +23,8 @@ This project is created to work with REST countries API. Link to source [here](h
   | -------------  | ------------- | -----------------------------------|
   | name             | string        | write name of the country                    |
  
+## Technologies used<br>
 
+* ASP.NET Core Web API;
+* Refit. Check documentation [here](https://github.com/reactiveui/refit);
+* MsTests for testing;
