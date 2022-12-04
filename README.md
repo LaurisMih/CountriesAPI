@@ -1,6 +1,6 @@
 # CountriesAPI
 This project is created to work with REST countries API. Link to source [here](https://restcountries.com)
-### Project works only with EU countries.
+#### Project works only with EU countries.
 
 ## How to start<br>
 1. Clone or download ZIP this repository<br>
