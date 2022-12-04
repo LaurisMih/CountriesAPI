@@ -1,5 +1,5 @@
 # CountriesAPI
-This project is created to work with REST countries API. Link to source [here](https://restcountries.com)
+This project is created to work with REST countries API. Link to source [here](https://restcountries.com)<br>
 **Note** Project works only with EU countries.
 
 ## How to start<br>
