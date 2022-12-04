@@ -56,11 +56,11 @@ namespace CountriesWebApi.Tests
             var filteredList = _filter.GetSortedCountriesByPopulation(_testList);
 
             //Assert
-            var name = filteredList.First();
-            name.Name.Should().Be("Lithuania");
+            var firstCountry = filteredList.First();
+            firstCountry.Name.Should().Be("Lithuania");
 
-            var name1 = filteredList.Last();
-            name1.Name.Should().Be("Estonia");
+            var lastCountry = filteredList.Last();
+            lastCountry.Name.Should().Be("Estonia");
         }
 
         [TestMethod]
@@ -70,11 +70,11 @@ namespace CountriesWebApi.Tests
             var filteredList = _filter.GetSortedCountriesByPopulationDensity(_testList);
 
             //Assert
-            var name = filteredList.First();
-            name.Name.Should().Be("Lithuania");
+            var firstCountry = filteredList.First();
+            firstCountry.Name.Should().Be("Lithuania");
 
-            var name1 = filteredList.Last();
-            name1.Name.Should().Be("Estonia");
+            var lastCountry = filteredList.Last();
+            lastCountry.Name.Should().Be("Estonia");
         }
 
         [TestMethod]
