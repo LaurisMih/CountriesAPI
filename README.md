@@ -1,5 +1,6 @@
 # CountriesAPI
 This project is created to work with REST countries API. Link to source [here](https://restcountries.com)
+### Project works only with EU countries.
 
 ## How to start<br>
 1. Clone or download ZIP this repository<br>
@@ -27,4 +28,4 @@ This project is created to work with REST countries API. Link to source [here](h
 
 * ASP.NET Core Web API;
 * Refit. Check documentation [here](https://github.com/reactiveui/refit);
-* MsTests for testing;
+* MSTests for testing;
