@@ -13,3 +13,12 @@ This project is created to work with REST countries API. Link to source [here](h
 4. Work with endpoints (keep project running to send requests) <br>
   ![image](https://user-images.githubusercontent.com/108615436/205511362-d5c0e70f-63b7-4be3-8886-237e440575cc.png)
 
+## App functionality<br>
+
+* Get country by name : GET /CountriesApi/{name}<br>
+ 
+ | Parameter      | Type          | Rule                               |
+ | -------------  | ------------- | -----------------------------------|
+ | name             | string        | write name of the country                    |
+ 
+
