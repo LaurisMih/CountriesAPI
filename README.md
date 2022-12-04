@@ -18,6 +18,7 @@ This project is created to work with REST countries API. Link to source [here](h
 * Get countries sorted by population : GET /CountriesApi/TopTenByPopulation<br>
 * Get countries sorted by population density : GET /CountriesApi/TopTenByPopulationDensity<br>
 * Get country by name : GET /CountriesApi/{name}<br> 
+
   | Parameter      | Type          | Rule                               |
   | -------------  | ------------- | -----------------------------------|
   | name             | string        | write name of the country                    |
