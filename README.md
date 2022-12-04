@@ -5,7 +5,7 @@ This project is created to work with REST countries API. Link to source [here](h
 1. Clone or download ZIP this repository<br>
 2. Click on folder and open CountriesWebApi.sln file<br>
 
-![image](https://user-images.githubusercontent.com/108615436/205511138-a81ff79d-e949-42c3-9fe5-98d590972494.png)<br>
+![image](https://user-images.githubusercontent.com/108615436/205511389-53129d8f-17cd-4e33-ada3-77501b72ae7a.png)<br>
 
 ![image](https://user-images.githubusercontent.com/108615436/205511249-52c986c7-4551-4f6a-85a1-94e4a450c8ba.png)<br>
 
